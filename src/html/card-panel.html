@@ -1,0 +1,278 @@
+<!-- ko if: editCard -->
+<div class="row">
+	<div class="col-md-3">
+		<form class="">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-search"></span>
+				</span>
+			<input type="text" class="form-control" placeholder="Find card" data-bind="click: nope">
+			</div>
+		</form>
+		<div class="list-group">
+			<!-- ko foreach: cards -->
+			<a href="" class="list-group-item" data-bind="click: $root.nope, text: name"></a>
+			<!-- /ko -->
+		</div>
+			<!--
+			 style="max-height:411px; overflow-y:scroll;"
+			<p class="list-group-item">Creatures</p>
+			<a href="/cards" class="list-group-item" data-bind="css: { active: $root.listCards }">Cards</a>
+			-->
+	</div><!--/.well -->
+	<div class="col-md-9">
+
+	<div class="panel panel-default" data-bind="with: card">
+
+	<form class="form-horizontal">
+		<div class="modal fade" id="myModal" data-bind="with: $data.cost">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Edit cost for <span data-bind="text: $root.card.name"></span>.</h4>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Tapped</label>
+							<div class="col-md-8">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" data-bind="checked: Tapped"> This card requires tapping.
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="inputOffence">Hay</label>
+							<div class="input-group col-md-4">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" data-bind="click: function() {Hay(parseInt(Hay()) - 1)}">
+										<span class="glyphicon glyphicon-minus-sign"></span>
+									</button>
+								</span>
+								<input type="text" id="inputOffence" class="form-control text-center" data-bind="value: Hay">
+								<span class="input-group-btn">
+									<!--
+									<button class="btn btn-default" type="button" data-bind="click: increment(Hay)">
+									-->
+									<button class="btn btn-default" type="button" data-bind="click: function() {Hay(parseInt(Hay()) + 1)}">
+										<span class="glyphicon glyphicon-plus-sign"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-primary" data-dismiss="modal">Ok</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+
+		<div class="panel-heading">
+			<h3 class="panel-title">Editing card</h3>
+		</div>
+		<div class="panel-body">
+
+			<div class="row">
+		<!--
+				<div class="alert alert-danger col-md-12">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Warning!</strong> Best check yo self, you're not looking too good.
+				</div>
+			-->
+				<div class="col-md-4">
+					<form>
+						<div class="row">
+							<div class="col-md-12">
+								<img class="img-responsive img-thumbnail" src="/img/006 Creampuff.jpg">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<button type="button block" class="btn btn-default btn-sm" data-bind="click: $root.nope">upload</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-8">
+					<form class="form-horizontal">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">card id</label>
+								<div class="col-md-8">
+									<!--
+									<span class="form-control" data-bind="text: card_id" disabled></span>
+													 style="display:none"
+													 data-bind="click: $(element).toggle()"
+									<input class="form-control" type="text" id="inputCardId" data-bind="value: ko.toJSON(err.card_no, null, 2)" readonly>
+									-->
+									<p class="form-control-static" data-bind="text: card_id"></p>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputCardNo">Card no. &amp; set</label>
+								<div data-bind="css: {'has-error': err.card_no}">
+									<div class="col-md-4">
+										<input class="form-control" type="text" id="inputCardNo" data-bind="value: card_no">
+									</div>
+									<div class="col-md-4">
+										<input class="form-control" type="text" id="inputSet" data-bind="value: set, typeahead: {
+																										name: 'set',
+																										valueKey: 'name',
+																										remote: '/api/kernel.php?sets=%QUERY',
+																										prefetch: '/api/kernel.php?sets=%QUERY'
+																									}, valueUpdate: 'typeahead:selected'">
+									</div>
+									<div class="help-block col-md-8 col-md-offset-4" data-bind="visible: err.card_no">
+										Card #<span data-bind="text: card_no"></span> already used in set '<span data-bind="text: set"></span>'
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputName">Name</label>
+								<div class="col-md-8">
+									<input class="form-control" type="text" id="inputName" data-bind="value: name">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputRarity">Rarity</label>
+								<div class="col-md-8">
+									<input class="form-control" type="text" id="inputRarity" data-bind="value: rarity">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputFamily">Family</label>
+								<div class="col-md-8">
+									<input class="form-control" type="text" id="inputFamily" data-bind="value: family">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputSpecies">Species</label>
+								<div class="col-md-8">
+									<input class="form-control" type="text" id="inputSpecies" data-bind="value: species">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputFlavour">Flavour text</label>
+								<div class="col-md-8">
+									<input class="form-control" type="text" id="inputFlavour" data-bind="value: flavour">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputCost">Cost</label>
+								<div class="col-md-8">
+									<pre data-bind="text: ko.toJSON(cost, null, 2)" data-toggle="modal" href="#myModal"></pre>
+								</div>
+								<!--
+								<div class="col-md-2">
+									<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-block">Edit</a>
+									<input class="form-control" type="text" id="inputCost" data-bind="value: cost" readonly>
+									<input data-toggle="modal" href="#myModal" class="form-control" type="text" id="inputCost" data-bind="value: cost" readonly>
+									<a data-toggle="modal" href="#myModal" class="btn btn-primary" data-bind="text: cost"></a>
+									<input class="form-control" type="text" id="inputCost" data-bind="value: cost">
+								</div>
+								-->
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputOffence">Offence</label>
+								<div class="input-group col-md-4">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" data-bind="click: decOffence">
+											<span class="glyphicon glyphicon-minus-sign"></span>
+										</button>
+									</span>
+									<input type="text" id="inputOffence" class="form-control text-center" data-bind="value: offence">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" data-bind="click: incOffence">
+											<span class="glyphicon glyphicon-plus-sign"></span>
+										</button>
+									</span>
+								</div><!-- /input-group function() {defence(parseInt(defence()) - 1)}-->
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="inputDefence">Defence</label>
+								<div class="input-group col-md-4">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" data-bind="click: decDefence">
+											<span class="glyphicon glyphicon-minus-sign"></span>
+										</button>
+									</span>
+									<input type="text" id="inputDefence" class="form-control text-center" data-bind="value: defence">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" data-bind="click: incDefence">
+											<span class="glyphicon glyphicon-plus-sign"></span>
+										</button>
+									</span>
+								</div><!-- /input-group $root.typeahead -->
+							</div>
+
+							<fieldset id="abilities">
+								<legend>Abilities</legend>
+								<div data-bind="foreach: {data: abilities}">
+									<div class="form-group" id="testing">
+										<div class="input-group col-md-6">
+											<input type="text" class="control-label form-control typeahead" placeholder="Ability" 
+															data-bind="value: name, typeahead: {
+																												name: 'abilities',
+																												valueKey: 'label',
+																												remote: '/api/kernel.php?abilities=%QUERY',
+																												prefetch: '/api/kernel.php?abilities=%QUERY'
+																											}, valueUpdate: 'typeahead:selected'">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu pull-right" data-bind="foreach: $root.abilities">
+													<li><a data-bind="click: function () {$parent.name(label)}, text: label"></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="input-group col-md-6">
+											<input type="text" class="form-control" placeholder="Cost" data-bind="value: cost">
+											<span class="input-group-btn">
+												<button class="btn btn-danger" data-bind="click: $root.card.remAbility">
+													<span class="glyphicon glyphicon-remove-sign"></span>
+												</button>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-4 col-md-offset-8">
+										<button class="btn btn-default btn-block" data-bind="click: $root.card.addAbility">Add</button>
+									</div>
+								</div>
+							</fieldset>
+					</form>
+				</div><!--/span-->
+			</div>
+		</div>
+		<div class="panel-footer clearfix">
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-warning" data-bind="click: $root.nope">Cancel</button>
+					<button type="submit" class="btn btn-primary" data-bind="click: $root.nope">Save</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+<!-- /ko -->

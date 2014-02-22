@@ -1,0 +1,67 @@
+<!-- ko if: listCards -->
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Listing cards</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th data-bind="click: function() { $root.sortByField('id'); }">id
+								<span class="glyphicon" data-bind="css: { 
+															'glyphicon-sort-by-attributes': 
+																$root.sortField() === 'id' && 
+																$root.sortOrder() === 'ASC',
+															'glyphicon-sort-by-attributes-alt': 
+																$root.sortField() === 'id' && 
+																$root.sortOrder() === 'DESC'}"></span>
+							</th>
+							<th data-bind="click: function() { $root.sortByField('card_no'); }">card no
+								<span class="glyphicon" data-bind="css: { 
+															'glyphicon-sort-by-attributes': 
+																$root.sortField() === 'card_no' && 
+																$root.sortOrder() === 'ASC',
+															'glyphicon-sort-by-attributes-alt': 
+																$root.sortField() === 'card_no' && 
+																$root.sortOrder() === 'DESC'}"></span>
+							</th>
+							<th data-bind="click: function() { $root.sortByField('set'); }">set
+								<span class="glyphicon" data-bind="css: { 
+															'glyphicon-sort-by-attributes': 
+																$root.sortField() === 'set' && 
+																$root.sortOrder() === 'ASC',
+															'glyphicon-sort-by-attributes-alt': 
+																$root.sortField() === 'set' && 
+																$root.sortOrder() === 'DESC'}"></span>
+							</th>
+							<th data-bind="click: function() { $root.sortByField('name'); }">name
+								<span class="glyphicon" data-bind="css: { 
+															'glyphicon-sort-by-alphabet': 
+																$root.sortField() === 'name' && 
+																$root.sortOrder() === 'ASC',
+															'glyphicon-sort-by-alphabet-alt': 
+																$root.sortField() === 'name' && 
+																$root.sortOrder() === 'DESC'}"></span>
+							</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: cards">
+						<tr data-bind="click: $root.gotoCard">
+							<td data-bind="text: id"></td>
+							<td data-bind="text: card_no"></td>
+							<td data-bind="text: set"></td>
+							<td data-bind="text: name"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p> Listing
+				<span data-bind="text: cards().length"></span>
+				cards.
+			</p>
+		</div>
+	</div>
+</div>
+<!-- /ko -->

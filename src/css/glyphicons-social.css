@@ -1,0 +1,305 @@
+.glyphicons-social {
+    background-image: url(../img/glyphicons-social.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.glyphicon-pinterest {
+    width: 24px;
+    height: 24px;
+    background-position: 0 0;
+}
+
+.glyphicon-dropbox {
+    width: 24px;
+    height: 24px;
+    background-position: -24px 0;
+}
+
+.glyphicon-google-plus {
+    width: 24px;
+    height: 24px;
+    background-position: -48px 0;
+}
+
+.glyphicon-jolicloud {
+    width: 24px;
+    height: 24px;
+    background-position: -72px 0;
+}
+
+.glyphicon-yahoo {
+    width: 24px;
+    height: 24px;
+    background-position: -96px 0;
+}
+
+.glyphicon-blogger {
+    width: 24px;
+    height: 24px;
+    background-position: -120px 0;
+}
+
+.glyphicon-picasa {
+    width: 24px;
+    height: 24px;
+    background-position: -144px 0;
+}
+
+.glyphicon-amazon {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -24px;
+}
+
+.glyphicon-tumblr {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -24px;
+}
+
+.glyphicon-wordpress {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -24px;
+}
+
+.glyphicon-instapaper {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -24px;
+}
+
+.glyphicon-evernote {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -24px;
+}
+
+.glyphicon-xing {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -24px;
+}
+
+.glyphicon-zootool {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -24px;
+}
+
+.glyphicon-dribbble {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -48px;
+}
+
+.glyphicon-deviantart {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -48px;
+}
+
+.glyphicon-read-it-later {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -48px;
+}
+
+.glyphicon-linked-in {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -48px;
+}
+
+.glyphicon-forrst {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -48px;
+}
+
+.glyphicon-pinboard {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -48px;
+}
+
+.glyphicon-behance {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -48px;
+}
+
+.glyphicon-github {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -72px;
+}
+
+.glyphicon-youtube {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -72px;
+}
+
+.glyphicon-skitch {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -72px;
+}
+
+.glyphicon-4square {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -72px;
+}
+
+.glyphicon-quora {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -72px;
+}
+
+.glyphicon-badoo {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -72px;
+}
+
+.glyphicon-spotify {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -72px;
+}
+
+.glyphicon-stumbleupon {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -96px;
+}
+
+.glyphicon-readability {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -96px;
+}
+
+.glyphicon-facebook {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -96px;
+}
+
+.glyphicon-twitter {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -96px;
+}
+
+.glyphicon-instagram {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -96px;
+}
+
+.glyphicon-posterous-spaces {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -96px;
+}
+
+.glyphicon-vimeo {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -96px;
+}
+
+.glyphicon-flickr {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -120px;
+}
+
+.glyphicon-last-fm {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -120px;
+}
+
+.glyphicon-rss {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -120px;
+}
+
+.glyphicon-skype {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -120px;
+}
+
+.glyphicon-e-mail {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -120px;
+}
+
+.glyphicon-vine {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -120px;
+}
+
+.glyphicon-myspace {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -120px;
+}
+
+.glyphicon-goodreads {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -144px;
+}
+
+.glyphicon-apple {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -144px;
+}
+
+.glyphicon-windows {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -144px;
+}
+
+.glyphicon-yelp {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -144px;
+}
+
+.glyphicon-playstation {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -144px;
+}
+
+.glyphicon-xbox {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -144px;
+}
+
+.glyphicon-android {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -144px;
+}
+
+.glyphicon-ios {
+    width: 24px;
+    height: 24px;
+    background-position: -168px 0;
+}

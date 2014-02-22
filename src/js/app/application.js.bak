@@ -1,0 +1,82 @@
+//$('.combobox').combobox();
+/*
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script src="js/knockout-2.3.0.js"></script>
+    <script src="js/knockout.mapping.js"></script>
+    <script src="js/knockout-jquery-ui-widget.js"></script>
+    <!--
+*/
+define(['knockout'], function(ko) {
+	return function application() {
+
+		console.log(ko);
+
+		var viewModel = {
+			moo : ko.observable(),
+			foo : ko.observable(),
+			card : ko.observable(),
+			cards : ko.observableArray(),
+			abilities : ko.observableArray(),
+			addAbility : function() {
+				this.abilities.push({
+					'ability_id': ko.observable(), 
+					'name': ko.observable(), 
+					'cost': ko.observable()
+				});
+			},
+			remAbility : function(ability) {
+				//this.abilities().remove(ability);
+				remAbility(ability);
+			},
+			incOffence : function() { incOffence(); },
+			decOffence : function() { decOffence(); },
+			incDefence : function() { incDefence(); },
+			decDefence : function() { decDefence(); }
+		}
+
+
+		$.getJSON('./kernel.php', {card:true}, function(data) {
+
+			ko.mapping.fromJS(data, {}, viewModel);
+		//	$('.typeahead').autocomplete({
+		//		source: './kernel.php?abilities=%QUERY'
+		//	});
+		/*
+			$('.typeahead').typeahead({
+				prefetch: './kernel.php?abilities=%QUERY'
+			});
+
+			$('.typeahead').typeahead({
+				source: function (query, process) {
+					return $.get('./kernel.php', { abilities: query }, function (data) {
+						return process(data.options);
+					});
+				}
+			});
+		*/
+		});
+
+		console.log(viewModel);
+
+		function incOffence() {
+			viewModel.card().offence(parseInt(viewModel.card().offence()) + 1);
+		}
+		function decOffence() {
+			viewModel.card().offence(parseInt(viewModel.card().offence()) - 1);
+		}
+		function incDefence() {
+			viewModel.card().defence(parseInt(viewModel.card().defence()) + 1);
+		}
+		function decDefence() {
+			viewModel.card().defence(parseInt(viewModel.card().defence()) - 1);
+		}
+		function remAbility(ability) {
+			viewModel.card().abilities.remove(ability);
+		}
+
+		return viewModel;
+	}
+});
+//ko.applyBindings(viewModel);  

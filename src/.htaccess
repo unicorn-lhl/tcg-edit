@@ -1,0 +1,30 @@
+
+RewriteEngine on
+#RewriteBase /floofwars
+RewriteBase /
+
+RewriteCond $1 !^(signin|test\.html|images|robots\.txt|todo.html)
+RewriteCond $1 !^(api/(.*))
+RewriteCond $1 !^(css/(.*))
+RewriteCond $1 !^(img/(.*))
+RewriteCond $1 !^(js/(.*))
+#RewriteCond $1 !^(vendor/(.*))
+#RewriteCond %{REQUEST_FILENAME} -f [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+
+###########
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !index
+#RewriteRule (.*) index.html [L]
+
+###########
+
+
+RewriteRule ^(.*)$ index.html [L]
+#RewriteRule ^(.*)$ index.html?$1 [L]
+#RewriteRule ^(.*)$ index.php/$1 [L]
+#RewriteRule ^(.*)$ api/index.php/$1 [L]
+
